@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package whatsapp;
+
+message SendMessageRequest {
+  string mobileNumber = 1;
+  string text = 2;
+}
+
+message SendMessageResponse {
+  bool ok = 1;
+  string message = 2;
+}
+
+service WhatsApp {
+  rpc SendMessage(SendMessageRequest) returns (SendMessageResponse);
+}
